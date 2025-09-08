@@ -1,7 +1,91 @@
 @import 'normalize.css';
 
-:root{
-    --primary:#fe2c55;
+:root {
+    /* Nền */
+    --color-background: #FFFFFF;
+    /* trắng sạch */
+    --color-surface: #F8F6FF;
+    /* tím rất nhạt */
+    --color-surface-secondary: #E8E4FF;
+    /* tím nhạt hơn */
+
+    /* Màu chính - Tím Penguin */
+    --color-primary: #8B5FBF;
+    /* tím chính của penguin */
+    --color-primary-dark: #6A4A8F;
+    /* tím đậm */
+    --color-primary-light: #A57FD1;
+    /* tím nhạt */
+    --color-primary-gradient: linear-gradient(135deg, #8B5FBF 0%, #A57FD1 100%);
+
+    /* Màu phụ - Xanh lá của cuốn sách */
+    --color-secondary: #4CAF50;
+    /* xanh lá tươi */
+    --color-secondary-dark: #388E3C;
+    /* xanh lá đậm */
+    --color-secondary-light: #81C784;
+    /* xanh lá nhạt */
+
+    /* Màu nhấn - Cam của chân/mỏ penguin */
+    --color-accent: #FF9800;
+    /* cam ấm */
+    --color-accent-dark: #F57C00;
+    /* cam đậm */
+    --color-accent-light: #FFB74D;
+    /* cam nhạt */
+
+    /* Màu bổ sung */
+    --color-success: #4CAF50;
+    /* xanh lá thành công */
+    --color-warning: #FF9800;
+    /* cam cảnh báo */
+    --color-error: #F44336;
+    /* đỏ lỗi */
+    --color-info: #2196F3;
+    /* xanh dương thông tin */
+
+    /* Màu trung tính */
+    --color-neutral-50: #FAFAFA;
+    --color-neutral-100: #F5F5F5;
+    --color-neutral-200: #EEEEEE;
+    --color-neutral-300: #E0E0E0;
+    --color-neutral-400: #BDBDBD;
+    --color-neutral-500: #9E9E9E;
+    --color-neutral-600: #757575;
+    --color-neutral-700: #616161;
+    --color-neutral-800: #424242;
+    --color-neutral-900: #212121;
+
+    /* Văn bản */
+    --color-text: #2D2D2D;
+    /* đen nhạt, dễ đọc */
+    --color-text-light: #6C7B7F;
+    /* xám chữ phụ */
+    --color-text-inverse: #FFFFFF;
+    /* dùng trên nền tối */
+    --color-text-muted: #9E9E9E;
+    /* chữ mờ */
+
+    /* Shadow và Border */
+    --shadow-sm: 0 1px 2px 0 rgba(139, 95, 191, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(139, 95, 191, 0.1), 0 2px 4px -1px rgba(139, 95, 191, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(139, 95, 191, 0.1), 0 4px 6px -2px rgba(139, 95, 191, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(139, 95, 191, 0.1), 0 10px 10px -5px rgba(139, 95, 191, 0.04);
+
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+    --border-radius-full: 9999px;
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
 }
 *{
     box-sizing: border-box;
