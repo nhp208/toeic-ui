@@ -135,7 +135,7 @@ function Sidebar() {
                     fontSize: '12px',
                     color: '#6c757d'
                 }}>
-                    <div>🐧 TOEIC Master</div>
+                    <div>🐧 TOEI With Pegu</div>
                     <div>Học cùng cánh cụt</div>
                 </div>
             )}

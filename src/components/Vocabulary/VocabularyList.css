@@ -1,0 +1,426 @@
+/* Vocabulary List Container */
+.vocabulary-list-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: white;
+  min-height: 100vh;
+  border-radius: 0;
+}
+
+/* Header */
+.list-header {
+  text-align: center;
+  margin-bottom: 30px;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.list-header h2 {
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(139, 95, 191, 0.2);
+}
+
+.list-header p {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+/* Filters */
+.filters {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.search-form input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.search-form button {
+  padding: 12px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.search-form button:hover {
+  background: #0056b3;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 15px;
+}
+
+.filter-controls select {
+  padding: 10px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  font-size: 1rem;
+}
+
+.filter-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Word List */
+.word-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.word-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.word-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.word-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.word-main {
+  flex: 1;
+}
+
+.word-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 5px 0;
+}
+
+.word-pronunciation {
+  font-size: 1.1rem;
+  color: #666;
+  font-style: italic;
+}
+
+.word-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.band-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.status-badge.learned {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.not-learned {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.status-badge.review-due {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.word-content {
+  margin-bottom: 15px;
+}
+
+.word-content > div {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.word-content strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.word-meaning {
+  color: #555;
+}
+
+.word-vietnamese {
+  color: #666;
+}
+
+.word-pos {
+  color: #888;
+}
+
+.word-category {
+  color: #888;
+}
+
+/* Examples */
+.word-examples {
+  margin-bottom: 15px;
+}
+
+.word-examples strong {
+  color: #333;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.example-item {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border-left: 4px solid #007bff;
+}
+
+.example-sentence {
+  font-style: italic;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.example-translation {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Progress */
+.word-progress {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.progress-info {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.next-review {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.empty-state h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.empty-state p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.pagination button {
+  padding: 10px 16px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  border-color: #007bff;
+  background: #f8f9ff;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination button.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 5px;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Error */
+.error {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.error p {
+  color: #dc3545;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.error button {
+  padding: 12px 24px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.error button:hover {
+  background: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vocabulary-list-container {
+    padding: 15px;
+  }
+  
+  .filters {
+    padding: 15px;
+  }
+  
+  .search-form {
+    flex-direction: column;
+  }
+  
+  .filter-controls {
+    flex-direction: column;
+  }
+  
+  .word-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .word-meta {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .word-title {
+    font-size: 1.5rem;
+  }
+  
+  .progress-info {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .pagination {
+    flex-wrap: wrap;
+  }
+  
+  .page-numbers {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+}

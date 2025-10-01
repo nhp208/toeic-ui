@@ -1,8 +1,10 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styles from './Header.module.scss';
 
 function Header() {
     const navigate = useNavigate();
+    const [menuOpen, setMenuOpen] = useState(false);
     const storedUser = useMemo(() => {
         try {
             const raw = localStorage.getItem('user');
@@ -46,75 +48,91 @@ function Header() {
     };
 
     return (
-        <div style={{
-            position: 'sticky', top: 0, zIndex: 100,
-            background: '#FFFFFF', borderBottom: '1px solid #eee'
-        }}>
-            <div style={{
-                maxWidth: 1200, margin: '0 auto', padding: '10px 16px',
-                display: 'flex', alignItems: 'center', justifyContent: 'space-between'
-            }}>
-                <div onClick={() => navigate('/home')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <span style={{ fontSize: 22 }}>🐧</span>
-                    <strong style={{ fontSize: 18 }}>TOEIC Master</strong>
+        <div className={styles.header}>
+            <div className={styles.container}>
+                <div onClick={() => navigate('/home')} className={styles.brand}>
+                    <span className={styles.brandIcon}>🐧</span>
+                    <strong className={styles.brandTitle}>TOEIC With Pegu</strong>
                 </div>
 
                 {isLoggedIn ? (
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                    <div className={styles.userSection}>
+                        <div
+                            className={styles.userBox}
+                            onMouseEnter={() => setMenuOpen(true)}
+                            onMouseLeave={() => setMenuOpen(false)}
+                        >
                             {storedUser?.avatar ? (
                                 <img
                                     src={storedUser.avatar}
                                     alt="avatar"
-                                    style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', border: '1px solid #eee' }}
+                                    className={styles.avatar}
                                 />
                             ) : (
-                                <div style={{
-                                    width: 36, height: 36, borderRadius: '50%', background: '#8B5FBF',
-                                    color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                    fontWeight: 600
-                                }}>
+                                <div className={styles.avatarInitials}>
                                     {getInitials(storedUser?.fullName || storedUser?.username)}
                                 </div>
                             )}
-                            <div style={{ lineHeight: 1.2 }}>
-                                <div style={{ fontWeight: 600 }}>{storedUser?.fullName || storedUser?.username}</div>
-                                <div style={{ fontSize: 12, color: '#6C7B7F' }}>{levelLabel(storedUser?.level)}</div>
+                            <div className={styles.userInfo}>
+                                <div className={styles.userName}>{storedUser?.fullName || storedUser?.username}</div>
+                                <div className={styles.userLevel}>{levelLabel(storedUser?.level)}</div>
                             </div>
+
+                            {menuOpen && (
+                                <div className={styles.dropdown}>
+                                    <div className={styles.dropdownArrow} />
+                                    <div className={styles.sectionTitle}>Tài khoản</div>
+                                    <button
+                                        onClick={() => { setMenuOpen(false); navigate('/profile'); }}
+                                        className={styles.menuBtn}
+                                    >
+                                        <span>👤</span>
+                                        <span>Hồ sơ</span>
+                                    </button>
+                                    <button
+                                        onClick={() => { setMenuOpen(false); navigate('/profile/edit'); }}
+                                        className={styles.menuBtn}
+                                    >
+                                        <span>✏️</span>
+                                        <span>Chỉnh sửa thông tin</span>
+                                    </button>
+                                    {storedUser?.role === 'admin' && (
+                                        <button
+                                            onClick={() => { setMenuOpen(false); navigate('/admin'); }}
+                                            className={styles.menuBtn}
+                                        >
+                                            <span>⚙️</span>
+                                            <span>Quản trị</span>
+                                        </button>
+                                    )}
+                                    <hr className={styles.divider} />
+                                    <button
+                                        onClick={() => { setMenuOpen(false); handleLogout(); }}
+                                        className={styles.menuBtnDanger}
+                                    >
+                                        <span>🚪</span>
+                                        <span>Đăng xuất</span>
+                                    </button>
+                                </div>
+                            )}
                         </div>
 
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                        <div className={styles.stats}>
+                            <div className={styles.statItem}>
                                 <span>🔥</span>
                                 <span style={{ fontWeight: 600 }}>{storedUser?.currentStreak ?? 0}</span>
-                                <span style={{ fontSize: 12, color: '#6C7B7F' }}>ngày</span>
+                                <span className={styles.statSub}>ngày</span>
                             </div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                            <div className={styles.statItem}>
                                 <span>⭐</span>
                                 <span style={{ fontWeight: 600 }}>{storedUser?.totalXP ?? 0}</span>
-                                <span style={{ fontSize: 12, color: '#6C7B7F' }}>XP</span>
+                                <span className={styles.statSub}>XP</span>
                             </div>
                         </div>
-
-                        <button
-                            onClick={handleLogout}
-                            style={{
-                                background: '#F44336', color: '#fff', border: 'none', padding: '8px 12px',
-                                borderRadius: 8, cursor: 'pointer'
-                            }}
-                        >
-                            Đăng xuất
-                        </button>
                     </div>
                 ) : (
                     <div>
-                        <button
-                            onClick={() => navigate('/auth')}
-                            style={{
-                                background: '#8B5FBF', color: '#fff', border: 'none', padding: '8px 12px',
-                                borderRadius: 8, cursor: 'pointer'
-                            }}
-                        >
+                        <button onClick={() => navigate('/auth')} className={styles.loginBtn}>
                             Đăng nhập
                         </button>
                     </div>

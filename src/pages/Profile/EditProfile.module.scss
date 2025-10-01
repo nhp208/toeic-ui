@@ -1,0 +1,61 @@
+ .wrapper {
+   max-width: 720px;
+   margin: 24px auto;
+   background: #ffffff;
+   padding: 20px;
+   border-radius: 16px;
+   border: 1px solid #E9EAEB;
+   box-shadow: 0 8px 24px rgba(17,17,26,0.06);
+ }
+
+ .title { margin: 0 0 16px; font-size: 20px; }
+
+ .form {
+   display: flex;
+   flex-direction: column;
+   gap: 14px;
+ }
+
+ .label { display: flex; flex-direction: column; gap: 6px; }
+
+ .input {
+   padding: 12px;
+   border-radius: 10px;
+   border: 1px solid #E1E2E4;
+   outline: none;
+ }
+ .input:focus { border-color: #8b5fbf; box-shadow: 0 0 0 3px rgba(139,95,191,0.16); }
+
+ .actions { display: flex; gap: 12px; margin-top: 12px; }
+ .primaryBtn {
+   background: #8b5fbf; color: #fff; border: none; padding: 10px 16px; border-radius: 10px; cursor: pointer; transition: transform .06s ease, filter .2s;
+ }
+ .primaryBtn:hover { filter: brightness(1.02); }
+ .primaryBtn:active { transform: translateY(1px); }
+ .secondaryBtn {
+   background: #F5F6F7; color: #333; border: 1px solid #E1E2E4; padding: 10px 16px; border-radius: 10px; cursor: pointer; transition: background .2s;
+ }
+ .secondaryBtn:hover { background: #EEF0F2; }
+
+ .success { color: #2e7d32; }
+ .error { color: #d32f2f; }
+
+ .avatarRow { display: flex; gap: 14px; align-items: center; }
+ .avatarPicker {
+   width: 84px; height: 84px; border-radius: 50%; border: 1px solid #E9EAEB; background: #FAFAFB;
+   display: flex; align-items: center; justify-content: center; cursor: pointer; overflow: hidden; position: relative;
+ }
+ .avatarPicker::after { content: ''; position: absolute; inset: 0; border-radius: 50%; box-shadow: 0 0 0 0 rgba(139,95,191,0.0); transition: box-shadow .2s; }
+ .avatarPicker:hover::after { box-shadow: 0 0 0 3px rgba(139,95,191,0.18); }
+ .avatarPlaceholder { font-size: 12px; color: #6c7b7f; text-align: center; padding: 4px; }
+ .avatarPreview { width: 100%; height: 100%; object-fit: cover; }
+ .urlBox { flex: 1; }
+ .hint { font-size: 12px; color: #6c7b7f; margin-top: 6px; }
+
+ @media (max-width: 600px) {
+   .wrapper { margin: 12px; padding: 14px; }
+   .avatarRow { flex-direction: column; align-items: flex-start; }
+   .actions { flex-direction: column; }
+ }
+
+

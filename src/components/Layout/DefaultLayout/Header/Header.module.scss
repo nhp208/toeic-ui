@@ -1,0 +1,170 @@
+ .header {
+   position: sticky;
+   top: 0;
+   z-index: 100;
+   background: #ffffff;
+   border-bottom: 1px solid #eee;
+ }
+
+ .container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 10px 16px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .brand {
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+ }
+
+ .brandIcon {
+   font-size: 22px;
+ }
+
+ .brandTitle {
+   font-size: 18px;
+   font-weight: 700;
+ }
+
+ .userSection {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+ }
+
+ .userBox {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   position: relative;
+ }
+
+ .avatar {
+   width: 36px;
+   height: 36px;
+   border-radius: 50%;
+   object-fit: cover;
+   border: 1px solid #eee;
+   cursor: pointer;
+ }
+
+ .avatarInitials {
+   width: 36px;
+   height: 36px;
+   border-radius: 50%;
+   background: #8b5fbf;
+   color: #fff;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 600;
+   cursor: pointer;
+ }
+
+ .userInfo {
+   line-height: 1.2;
+   cursor: pointer;
+ }
+
+ .userName { font-weight: 600; }
+ .userLevel { font-size: 12px; color: #6c7b7f; }
+
+ .dropdown {
+   position: absolute;
+   right: 0;
+   top: 100%;
+   margin-top: 8px;
+   background: #ffffff;
+   border: 1px solid #e9eaeb;
+   border-radius: 12px;
+   min-width: 240px;
+   box-shadow: 0 12px 28px rgba(17, 17, 26, 0.12);
+   padding: 6px;
+   z-index: 1000;
+   &::before {
+     content: '';
+     position: absolute;
+     top: -8px;
+     left: 0;
+     right: 0;
+     height: 8px;
+     background: transparent;
+   }
+ }
+
+ .dropdownArrow {
+   position: absolute;
+   top: -8px;
+   right: 16px;
+   width: 0;
+   height: 0;
+   border-left: 8px solid transparent;
+   border-right: 8px solid transparent;
+   border-bottom: 8px solid #ffffff;
+   filter: drop-shadow(0 -1px 0 #e9eaeb);
+ }
+
+ .sectionTitle {
+   padding: 6px 10px;
+   font-size: 12px;
+   color: #6c7b7f;
+ }
+
+ .menuBtn {
+   width: 100%;
+   text-align: left;
+   background: transparent;
+   border: none;
+   padding: 10px 12px;
+   border-radius: 8px;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   font-size: 14px;
+   color: #1f2937;
+ }
+
+ .menuBtn:hover { background: #f7f7f8; }
+
+ .menuBtnDanger {
+   @extend .menuBtn;
+   color: #d32f2f;
+ }
+
+ .menuBtnDanger:hover { background: #fff4f4; }
+
+ .divider {
+   border: 0;
+   border-top: 1px solid #f0f1f3;
+   margin: 6px 0;
+ }
+
+ .stats {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+ }
+
+ .statItem {
+   display: flex;
+   align-items: center;
+   gap: 6px;
+ }
+
+ .statSub { font-size: 12px; color: #6c7b7f; }
+
+ .loginBtn {
+   background: #8b5fbf;
+   color: #fff;
+   border: none;
+   padding: 8px 12px;
+   border-radius: 8px;
+   cursor: pointer;
+ }
+

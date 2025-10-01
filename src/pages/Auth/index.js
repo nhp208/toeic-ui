@@ -372,6 +372,18 @@ function Auth() {
                                     {isLogin ? 'Đăng ký ngay' : 'Đăng nhập'}
                                 </button>
                             </p>
+                            <div style={{ marginTop: 12, color: '#6c757d' }}>hoặc</div>
+                            <button
+                                type="button"
+                                className={styles.submitBtn}
+                                style={{ background: '#DB4437' }}
+                                onClick={() => {
+                                    const base = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api';
+                                    window.location.href = `${base.replace(/\/$/, '')}/auth/google`;
+                                }}
+                            >
+                                Đăng nhập với Google
+                            </button>
                         </div>
                     </div>
                 </div>
